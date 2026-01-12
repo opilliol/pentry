@@ -29,3 +29,16 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 */
+
+asks.register('clean') {
+    doLast {
+        println 'Cleaning'
+    }
+}
+
+asks.register('build') {
+    doLast {
+        println 'Building'
+    }
+}
+
