@@ -30,15 +30,28 @@ dependencies {
 }
 */
 
-asks.register('clean') {
-    doLast {
-        println 'Cleaning'
+apply plugin: 'java'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
 
-asks.register('build') {
+wrapper {
+    gradleVersion = "9.2.1"
+    distributionType = Wrapper.DistributionType.ALL
+}
+
+tasks.register('distclean') {
     doLast {
-        println 'Building'
+        println 'Dist Cleaning'
+    }
+}
+
+tasks.register('package') {
+    doLast {
+        println 'Packaging'
     }
 }
 
